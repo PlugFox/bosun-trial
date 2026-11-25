@@ -22,6 +22,11 @@ pub fn neg(a: i64) -> i64 {
     a.wrapping_neg()
 }
 
+/// Returns the square of `a`, wrapping on overflow so it never panics.
+pub fn sq(a: i64) -> i64 {
+    a.wrapping_mul(a)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -44,5 +49,10 @@ mod tests {
     #[test]
     fn negates() {
         assert_eq!(neg(3), -3);
+    }
+
+    #[test]
+    fn squares() {
+        assert_eq!(sq(6), 36);
     }
 }
