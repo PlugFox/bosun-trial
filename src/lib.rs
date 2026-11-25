@@ -17,6 +17,11 @@ pub fn mul(a: i64, b: i64) -> i64 {
     a * b
 }
 
+/// Returns the negation of `a`, wrapping at `i64::MIN` so it never panics.
+pub fn neg(a: i64) -> i64 {
+    a.wrapping_neg()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -34,5 +39,10 @@ mod tests {
     #[test]
     fn multiplies() {
         assert_eq!(mul(4, 5), 20);
+    }
+
+    #[test]
+    fn negates() {
+        assert_eq!(neg(3), -3);
     }
 }
