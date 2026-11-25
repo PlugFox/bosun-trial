@@ -1,4 +1,6 @@
 //! A scratch crate for the worktree-mode trial of bosun (#8).
+//!
+//! The functions are total: none of them panics.
 
 /// Returns `a` unchanged.
 pub fn id(a: i64) -> i64 {
