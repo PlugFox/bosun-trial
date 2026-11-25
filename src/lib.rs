@@ -12,6 +12,11 @@ pub fn add(a: i64, b: i64) -> i64 {
     a + b
 }
 
+/// Returns the product of `a` and `b`.
+pub fn mul(a: i64, b: i64) -> i64 {
+    a * b
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -24,5 +29,10 @@ mod tests {
     #[test]
     fn adds() {
         assert_eq!(add(2, 3), 5);
+    }
+
+    #[test]
+    fn multiplies() {
+        assert_eq!(mul(4, 5), 20);
     }
 }
