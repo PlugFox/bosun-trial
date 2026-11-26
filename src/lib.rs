@@ -32,6 +32,11 @@ pub fn half(a: i64) -> i64 {
     a / 2
 }
 
+/// Returns `a` doubled, wrapping on overflow so it never panics.
+pub fn twice(a: i64) -> i64 {
+    a.wrapping_mul(2)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -64,5 +69,10 @@ mod tests {
     #[test]
     fn halves() {
         assert_eq!(half(9), 4);
+    }
+
+    #[test]
+    fn doubles() {
+        assert_eq!(twice(4), 8);
     }
 }
