@@ -27,6 +27,11 @@ pub fn sq(a: i64) -> i64 {
     a.wrapping_mul(a)
 }
 
+/// Returns the cube of `a`, wrapping on overflow so it never panics.
+pub fn cube(a: i64) -> i64 {
+    a.wrapping_mul(a).wrapping_mul(a)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -54,5 +59,10 @@ mod tests {
     #[test]
     fn squares() {
         assert_eq!(sq(6), 36);
+    }
+
+    #[test]
+    fn cubes() {
+        assert_eq!(cube(2), 8);
     }
 }
