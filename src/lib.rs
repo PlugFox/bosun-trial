@@ -27,6 +27,11 @@ pub fn sq(a: i64) -> i64 {
     a.wrapping_mul(a)
 }
 
+/// Returns `a` divided by two, rounding toward zero. Never panics.
+pub fn half(a: i64) -> i64 {
+    a / 2
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -54,5 +59,10 @@ mod tests {
     #[test]
     fn squares() {
         assert_eq!(sq(6), 36);
+    }
+
+    #[test]
+    fn halves() {
+        assert_eq!(half(9), 4);
     }
 }
